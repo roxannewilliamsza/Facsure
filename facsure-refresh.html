@@ -11,10 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0f2740;
-    --navy-deep:#0a1b2e;
-    --gold:#c99a3d;
-    --gold-light:#e0b768;
+    --navy:#464668;
+    --navy-deep:#2e2e44;
+    --gold:#3f9e81;
+    --gold-light:#6cbfa0;
     --ink:#1c2733;
     --muted:#5b6b7a;
     --bg:#f7f8fa;
@@ -58,7 +58,9 @@
 
   /* Hero */
   .hero{
-    background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#173a5e 100%);
+    background:linear-gradient(135deg,rgba(46,46,68,0.7) 0%,rgba(70,70,104,0.6) 55%,rgba(90,90,130,0.5) 100%),url("hero-bg.jpg");
+    background-size:cover;
+    background-position:center;
     color:var(--white);
     padding:130px 0 110px;
     position:relative;
@@ -66,7 +68,7 @@
   }
   .hero::after{
     content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
-    background:radial-gradient(circle,rgba(201,154,61,0.25) 0%,rgba(201,154,61,0) 70%);
+    background:radial-gradient(circle,rgba(63,158,129,0.25) 0%,rgba(63,158,129,0) 70%);
   }
   .hero-inner{max-width:640px;position:relative;z-index:1;}
   .eyebrow{
@@ -78,9 +80,9 @@
   .btn-primary{
     display:inline-block;background:var(--gold);color:var(--navy-deep);font-weight:700;
     padding:15px 32px;border-radius:999px;font-size:0.95rem;transition:transform .2s,box-shadow .2s;
-    box-shadow:0 8px 20px rgba(201,154,61,0.3);
+    box-shadow:0 8px 20px rgba(63,158,129,0.3);
   }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,154,61,0.4);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(63,158,129,0.4);}
 
   /* Section heading */
   .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
@@ -180,7 +182,7 @@
 
 <header>
   <div class="nav-wrap">
-    <div class="logo">Fac<span>sure</span></div>
+    <div class="logo"><img src="logo-dark.svg" alt="Facsure" height="32"></div>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -316,7 +318,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">Fac<span>sure</span></div>
+        <div class="footer-logo"><img src="logo-light.svg" alt="Facsure" height="32"></div>
         <p>Facsure is a dynamic accounting firm based in Cape Town, established by a group of highly skilled individuals, to cater for all your financial and accounting business needs. We have made it our mission to cater for our clients at affordable prices and deliver reliable, practical and professional advice.</p>
       </div>
       <div>
