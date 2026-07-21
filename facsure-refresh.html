@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facsure Accountants</title>
+<meta name="description" content="Facsure offers a wide range of accounting services to cater to our client's specific financial needs.">
+<meta name="keywords" content="accounting, cape town, accountants, tax">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2740;
+    --navy-deep:#0a1b2e;
+    --gold:#c99a3d;
+    --gold-light:#e0b768;
+    --ink:#1c2733;
+    --muted:#5b6b7a;
+    --bg:#f7f8fa;
+    --white:#ffffff;
+    --border:#e5e9ee;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(15,39,64,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1140px;margin:0 auto;}
+  .logo{font-weight:800;font-size:1.3rem;color:var(--navy);letter-spacing:-0.02em;}
+  .logo span{color:var(--gold);}
+  nav ul{list-style:none;display:flex;gap:36px;}
+  nav a{font-weight:600;font-size:0.95rem;color:var(--navy);opacity:0.85;transition:opacity .2s;}
+  nav a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--navy);color:var(--white);padding:10px 22px;border-radius:999px;
+    font-weight:600;font-size:0.9rem;transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--gold);color:var(--navy-deep);}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#173a5e 100%);
+    color:var(--white);
+    padding:130px 0 110px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(201,154,61,0.25) 0%,rgba(201,154,61,0) 70%);
+  }
+  .hero-inner{max-width:640px;position:relative;z-index:1;}
+  .eyebrow{
+    display:inline-block;color:var(--gold-light);font-weight:700;font-size:0.8rem;
+    letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{font-size:2.9rem;font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:20px;}
+  .hero p{font-size:1.1rem;color:#c7d3de;margin-bottom:34px;max-width:520px;}
+  .btn-primary{
+    display:inline-block;background:var(--gold);color:var(--navy-deep);font-weight:700;
+    padding:15px 32px;border-radius:999px;font-size:0.95rem;transition:transform .2s,box-shadow .2s;
+    box-shadow:0 8px 20px rgba(201,154,61,0.3);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,154,61,0.4);}
+
+  /* Section heading */
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-head .eyebrow{color:var(--gold);}
+  .section-head h2{font-size:2.2rem;font-weight:800;letter-spacing:-0.02em;color:var(--navy);margin-bottom:14px;}
+  .section-head p{color:var(--muted);font-size:1.05rem;}
+
+  /* Services */
+  .services{background:var(--white);}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .service-card{
+    background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+    padding:32px 26px;transition:transform .2s,box-shadow .2s,border-color .2s;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent;}
+  .service-icon{
+    width:52px;height:52px;border-radius:12px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .service-icon img{width:26px;height:26px;filter:brightness(0) invert(1);}
+  .service-card h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+  .service-card p{font-size:0.92rem;color:var(--muted);}
+
+  /* About */
+  .about{background:var(--navy-deep);color:var(--white);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;}
+  .about h2{font-size:2rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:22px;line-height:1.25;}
+  .about p{color:#b9c6d3;margin-bottom:20px;font-size:1.02rem;}
+  .stat-card{
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);padding:36px 30px;
+  }
+  .stat-card h3{color:var(--gold-light);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:16px;}
+  .stat-card p{color:#c7d3de;font-size:0.98rem;margin-bottom:0;}
+
+  /* Contact */
+  .contact{background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;}
+  .contact-info h2{font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:16px;letter-spacing:-0.02em;}
+  .contact-info p{color:var(--muted);margin-bottom:28px;}
+  .info-row{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+  .info-row .dot{
+    width:38px;height:38px;flex:none;border-radius:10px;background:var(--bg);
+    border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-weight:700;
+  }
+  .info-row div a, .info-row div span{color:var(--ink);font-weight:600;font-size:0.95rem;}
+  .info-row div small{display:block;color:var(--muted);font-weight:500;font-size:0.8rem;margin-bottom:2px;}
+
+  form{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:36px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  input,textarea{
+    width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:10px;
+    font-family:inherit;font-size:0.95rem;background:var(--white);transition:border-color .2s;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--gold);}
+  textarea{min-height:130px;resize:vertical;margin-bottom:20px;}
+  .btn-submit{
+    background:var(--navy);color:var(--white);font-weight:700;padding:14px 30px;
+    border:none;border-radius:999px;font-size:0.95rem;cursor:pointer;transition:background .2s;
+    font-family:inherit;
+  }
+  .btn-submit:hover{background:var(--gold);color:var(--navy-deep);}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#a9b8c6;padding:64px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 0.9fr 0.9fr 1fr;gap:40px;margin-bottom:48px;}
+  .footer-logo{font-weight:800;font-size:1.2rem;color:var(--white);margin-bottom:14px;}
+  .footer-logo span{color:var(--gold);}
+  .footer-grid p{font-size:0.9rem;color:#8fa0af;}
+  .footer-grid h4{color:var(--white);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:18px;}
+  .footer-grid ul{list-style:none;}
+  .footer-grid li{margin-bottom:10px;font-size:0.9rem;}
+  .footer-grid a{color:#a9b8c6;transition:color .2s;}
+  .footer-grid a:hover{color:var(--gold-light);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;text-align:center;font-size:0.85rem;color:#7d8e9c;}
+
+  @media (max-width:900px){
+    section{padding:64px 0;}
+    nav ul, .nav-cta{display:none;}
+    .menu-toggle{display:block;}
+    .hero h1{font-size:2.1rem;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .about-grid, .contact-grid{grid-template-columns:1fr;gap:36px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .form-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    .services-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">Fac<span>sure</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <span class="eyebrow">Cape Town &middot; Accounting &amp; Tax</span>
+      <h1>Improve your business with our solution</h1>
+      <p>Facsure is a dynamic accounting firm based in Cape Town, established by a group of highly skilled individuals, to cater for all your financial and accounting business needs.</p>
+      <a href="#about" class="btn-primary">More details</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Our Services</h2>
+      <p>Facsure offers a wide range of accounting services to cater to our client's specific financial needs.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/1.svg" alt=""></div>
+        <h3>Monthly management accounting services</h3>
+        <p>Preparation of monthly management packs for internal decision making or for submission to financial institutions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/13.svg" alt=""></div>
+        <h3>Taxation calculations and submissions</h3>
+        <p>Our experienced tax department will prepare detailed tax calculations of all Company, Trust and Individual tax returns and ensure that they are submitted to SARS on a timely basis.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/10.svg" alt=""></div>
+        <h3>VAT calculations and submissions</h3>
+        <p>We will ensure that all the VAT calculations and submissions are prepared and submitted before the monthly deadline.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/14.svg" alt=""></div>
+        <h3>Bookkeeping</h3>
+        <p>Capturing of monthly bank, petty cash and credit card statements for the preparation of the monthly management accounts.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/19.svg" alt=""></div>
+        <h3>Payroll services</h3>
+        <p>Weekly &amp; monthly payslips prepared for all salary and wage earners, as well as the submission of the monthly EMP201's and Bi-annual EMP501 returns to SARS.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/11.svg" alt=""></div>
+        <h3>Secretarial services</h3>
+        <p>Our secretarial department can deal with all company changes that need to be made with CIPC as well as the submission of the annual duties and XBRL.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/5.svg" alt=""></div>
+        <h3>Annual Financial Statements</h3>
+        <p>Annual Financial Statement preparation in terms of the Companies Act 71 of 2008 and in accordance with the necessary Accounting Framework.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><img src="https://facsure.co.za/images/icon/15.svg" alt=""></div>
+        <h3>Business consultancy</h3>
+        <p>Our Partners can assist with all forms of business consultancy whether it be tax structuring, cashflow projections &amp; budgeting, business valuations or day to day decision making.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About Facsure</span>
+        <h2>Efficient reporting systems, closely monitored cash flow.</h2>
+        <p>Within the current economic environment it has become vital for businesses to become aware of the need for efficient reporting systems and to strictly monitor cash flows.</p>
+        <p>Avoid spending time and money on a multitude of resources to accomplish these tasks. With our expertise, professional advice and supervision these financial management tasks can be obtained efficiently and affordably through our firm's comprehensive financial and accounting services.</p>
+        <p>We have noticed the trend of small to medium sized enterprises not being able to access affordable and professional accounting expertise. We have made it our mission to cater for our clients at affordable prices and deliver reliable, practical and professional advice. If you feel that your business can improve its monthly reporting and taxation requirements please contact us and we will be more than happy to assist you.</p>
+      </div>
+      <div class="stat-card">
+        <h3>Our commitment</h3>
+        <p>Affordable, reliable and professional advice for small to medium sized enterprises &mdash; from monthly bookkeeping through to annual financial statements and business consultancy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow" style="color:var(--gold)">Get in touch</span>
+        <h2>Contact us</h2>
+        <p>Have a question about your accounting or tax needs? Send us a message and we'll get back to you.</p>
+        <div class="info-row">
+          <div class="dot">&#8962;</div>
+          <div><small>Address</small><span>Suite 403, 47 Strand Street, Cape Town</span></div>
+        </div>
+        <div class="info-row">
+          <div class="dot">&#9742;</div>
+          <div><small>Phone</small><a href="tel:+27214235678">+(27) 21 423 5678</a></div>
+        </div>
+        <div class="info-row">
+          <div class="dot">&#9993;</div>
+          <div><small>Email</small><a href="mailto:rbain@facsure.co.za">rbain@facsure.co.za</a></div>
+        </div>
+        <div class="info-row">
+          <div class="dot">&#9993;</div>
+          <div><small>Email</small><a href="mailto:gwilliams@facsure.co.za">gwilliams@facsure.co.za</a></div>
+        </div>
+      </div>
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Name" name="name" required>
+          <input type="email" placeholder="Email address" name="email" required>
+        </div>
+        <input type="text" placeholder="Subject" name="subject" style="margin-bottom:16px;" required>
+        <textarea placeholder="Message" name="message" required></textarea>
+        <button type="submit" class="btn-submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Fac<span>sure</span></div>
+        <p>Facsure is a dynamic accounting firm based in Cape Town, established by a group of highly skilled individuals, to cater for all your financial and accounting business needs. We have made it our mission to cater for our clients at affordable prices and deliver reliable, practical and professional advice.</p>
+      </div>
+      <div>
+        <h4>Taxation &amp; Legislation</h4>
+        <ul>
+          <li><a href="https://www.sars.gov.za/" target="_blank" rel="noopener">SARS</a></li>
+          <li><a href="http://www.acts.co.za" target="_blank" rel="noopener">SA Acts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institutions</h4>
+        <ul>
+          <li><a href="https://www.saipa.co.za/" target="_blank" rel="noopener">SAIPA</a></li>
+          <li><a href="http://www.cipc.co.za/za/" target="_blank" rel="noopener">CIPC</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in Touch</h4>
+        <ul>
+          <li>Suite 403, 47 Strand Street, Cape Town</li>
+          <li><a href="tel:+27214235678">+(27) 21 423 5678</a></li>
+          <li><a href="mailto:rbain@facsure.co.za">rbain@facsure.co.za</a></li>
+          <li><a href="mailto:gwilliams@facsure.co.za">gwilliams@facsure.co.za</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> Facsure Accountants</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
